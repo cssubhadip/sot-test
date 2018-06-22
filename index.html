@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Important meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SOT Test</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+      <div id="status">&nbsp;</div>
+  </div>
+  <!-- Home -->
+  <section id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 id="home-heading-1">Search</h1><br/>
+            <h1 id="home-heading-2">License <span>Applications</span></h1>
+            <p class="header-text">In this page you can search all business license applications for the state of New York.</p>
+            <a class="btn btn-success btn-lg btn-home jumper" role="button" href="#filter-data" title="Start Now">Start Searching</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Home Ends -->
+
+  <section id="filter-data">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <h3 class="form-heading">Search License Applications <span class="note hidden-xs hidden-sm">(Note: Pressing the search button will display all the records. You can use the filters to narrow down your search.)</span></h3>
+            <hr class="heading-bdr">
+        </div>
+      </div>
+
+      <div class="row contact-form">
+        <!-- Search Form -->
+        <div class="col-md-12">
+            <div class="col-md-12 form-bg">
+              <form action="" class="form-inline" id="application-search-form">
+                <div class="form-group col-md-4 col-sm-4">
+                  <input type="text" class="form-control custom-input" id="txt_app_id" placeholder="Application Id" value="">
+                </div>
+                <div class="form-group col-md-3 col-sm-3">
+                  <input type="text" class="form-control custom-input" id="txt_business_name" placeholder="Business Name" value="">
+                </div>
+                <div class="form-group col-md-3 col-sm-3">
+                  <input type="text" class="form-control custom-input" id="txt_city_name" placeholder="City" value="">
+                </div>
+                <div class="form-group col-md-2 col-sm-2">
+                    <button type="submit" id="filter-search" class="btn btn-success btn-form">Search</button>
+                  </div>
+              </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="row" id="progress-bar-container">
+        <div class="col-md-12 progress-container">
+          <div class="text-center" id="progress-bar-text">
+            <div class="progress-message">Connecting to server...</div>
+            <div class="progress-message">Searching all records...</div>
+            <div class="progress-message">Preparing results...</div>
+            <div class="progress-message">Rendering data...</div>
+          </div>
+
+          <div class="progress">
+            <div id="progress-bar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="show-data">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="hr-separator">
+        </div>
+      </div>
+
+      <div class="row error-msg">
+        <div class="col-md-12">
+          <div class="alert alert-danger"><strong>Oops!</strong> We could not find any records for the given filters.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+            <h3 class="table-heading">License Applications</h3>
+            <hr class="heading-bdr">
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Search Form -->
+        <div class="col-md-12">
+          <div id="table-main">
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Application#</th>
+                  <th>Category</th>
+                  <th>Business Name</th>
+                  <th>Application/Renewal</th>
+                  <th>License#</th>
+                  <th>City</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="content-dummy">
+
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Application Data</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="ajax-load text-center">
+            <p><img src="img/loader.gif" alt=""></p>
+          </div>
+
+          <div class="modal-content">
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <footer id="footer">
+      <div class="container">
+        <p class="text-muted">&copy;2018 SOT Test</p>
+      </div>
+  </footer>
+
+  <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
